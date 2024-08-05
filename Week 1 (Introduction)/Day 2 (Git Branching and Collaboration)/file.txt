@@ -1,0 +1,3 @@
+Hello i am no one 
+
+//git checkout -- fileName garda change haru lai discard gari dinxa till previous commit 

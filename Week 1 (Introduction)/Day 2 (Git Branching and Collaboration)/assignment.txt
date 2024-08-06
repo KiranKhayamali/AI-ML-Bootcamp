@@ -1,1 +1,4 @@
 Enable SSH authentication on Github
+    ssh-keygen //ssh key generation
+    then copy the pub text to deploy keys in github account
+    ssh -T git@github.com //to test the connection

@@ -11,4 +11,4 @@ p = float(input('Enter principal:'))
 t = int(input('Enter time: '))
 r = float(input('Enter Rate: '))
 SI=(p*t*r)/100
-print(f"PRINCIPLE:RS.{p}\nTIME:{t} YEARS\nRATE:{r}%\nSIMPLE INTEREST:RS.{SI}")
+print(f"PRINCIPLE:RS.{p}\nTIME:{t} YEARS\nRATE:{r}%\nSIMPLE INTEREST:RS.{SI}") 

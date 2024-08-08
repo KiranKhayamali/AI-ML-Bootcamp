@@ -97,3 +97,27 @@ Conditional Statement
 #     user_input = int(input("Enter Input:"))
 #     if (user_input%5 == 0):
 #         break
+
+#Function
+
+# def even_number_checker(x):
+#     if (x%2 == 0):
+#         print(f"{x} is even number.")
+#     else:
+#         print(f"{x} is odd number.")
+
+# even_number_checker(9)
+# even_number_checker(3)
+# even_number_checker(2)
+# even_number_checker(0)
+
+#task5
+def multiple_of_ten(x):
+    if (x%10 ==0):
+        print(f"{x} is multiple of 10.")
+    else:
+        print(f"{x} is not multiple of 10.")
+
+multiple_of_ten(100)
+multiple_of_ten(69)
+multiple_of_ten(40)

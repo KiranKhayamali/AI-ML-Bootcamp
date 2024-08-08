@@ -111,13 +111,22 @@ Conditional Statement
 # even_number_checker(2)
 # even_number_checker(0)
 
-#task5
-def multiple_of_ten(x):
-    if (x%10 ==0):
-        print(f"{x} is multiple of 10.")
-    else:
-        print(f"{x} is not multiple of 10.")
+# #task5
+# def multiple_of_ten(x):
+#     if (x%10 ==0):
+#         print(f"{x} is multiple of 10.")
+#     else:
+#         print(f"{x} is not multiple of 10.")
 
-multiple_of_ten(100)
-multiple_of_ten(69)
-multiple_of_ten(40)
+# multiple_of_ten(100)
+# multiple_of_ten(69)
+# multiple_of_ten(40)
+
+def even_odd_checker(x):
+    if(x%2 == 0):
+        return ("Even Number.", x)
+    else:
+        return ("Odd Number.", x)
+
+output = even_odd_checker(9)
+print(output)

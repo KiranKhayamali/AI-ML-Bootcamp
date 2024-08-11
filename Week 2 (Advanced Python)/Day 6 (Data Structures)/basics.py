@@ -27,3 +27,20 @@ for even_num in num:
         print(even_num)
 
 print("**" *30)
+
+#How to add element in a list
+new_list = []
+print(new_list , len(new_list))
+
+# #staticly adding
+# new_list = [1]
+# print(new_list , len(new_list))
+
+#dynamic adding 
+for i in range(1, 9):
+    new_list.append(i)
+    
+print(new_list , len(new_list))
+
+print("**" *30)
+

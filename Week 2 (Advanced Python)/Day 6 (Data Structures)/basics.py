@@ -77,19 +77,35 @@
 # print(even_list)
 
 
-#Dictionary
-dict_val = {
-    'key1' : 1,
-    'key2' : "kiran", 
-    'key3' : [10, 20, 30, 40, 50]
-}
+# #Dictionary
+# dict_val = {
+#     'key1' : 1,
+#     'key2' : "kiran", 
+#     'key3' : [10, 20, 30, 40, 50]
+# }
 
-print(dict_val['key3'])
-print(dict_val.keys())
-print(dict_val.values())
+# print(dict_val['key3'])
+# print(dict_val.keys())
+# print(dict_val.values())
 
-list_keys = ['apple', 'ball', 'cat']
-list_values = ['red color fruit', 'something that is used to play', 'type of pet']
+# list_keys = ['apple', 'ball', 'cat']
+# list_values = ['red color fruit', 'something that is used to play', 'type of pet']
 
-dict1 = dict(zip(list_keys, list_values))
-print(dict1)
+# dict1 = dict(zip(list_keys, list_values))
+# print(dict1)
+
+#Task 12
+list_ques = []
+list_ans = []
+while True:
+    user_ques = input("Enter question :")
+    user_ans = input("Enter answer of the question :")
+    user_input = input("DO you to continue?    :")
+    list_ques.append(user_ques)
+    list_ans.append(user_ans)
+    if user_input == "N":
+        break
+
+question = dict(zip(list_ques, list_ans))
+
+print(question)

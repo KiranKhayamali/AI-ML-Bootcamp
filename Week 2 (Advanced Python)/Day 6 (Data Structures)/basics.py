@@ -57,21 +57,39 @@
 # print(list_var[1:]) #slices list from the 2nd element
 # print(list_var[1:4]) #slices list from 2nd element to 5th element
 
-#removing element from list
-list_var = [1,2,3,4,5,6,7,8,9]
-print(f"Original list: {list_var}")
+# #removing element from list
+# list_var = [1,2,3,4,5,6,7,8,9]
+# print(f"Original list: {list_var}")
 
-print(f"poping 3rd element from list : {list_var.pop(2)}")
-print(f"poping 6th element : {list_var.pop(4)}")
-print(f"poping 6th element : {list_var.pop(6)}")
+# print(f"poping 3rd element from list : {list_var.pop(2)}")
+# print(f"poping 6th element : {list_var.pop(4)}")
+# print(f"poping 6th element : {list_var.pop(6)}")
 
-#task 11 : create a list of number 1-100 , then remove the odd number
-even_list = []
-for i in range(1, 101):
-    even_list.append(i)
+# #task 11 : create a list of number 1-100 , then remove the odd number
+# even_list = []
+# for i in range(1, 101):
+#     even_list.append(i)
 
-for index, num in enumerate(even_list):
-    if num %2 != 0:
-        even_list.pop(index)
+# for index, num in enumerate(even_list):
+#     if num %2 != 0:
+#         even_list.pop(index)
 
-print(even_list)
+# print(even_list)
+
+
+#Dictionary
+dict_val = {
+    'key1' : 1,
+    'key2' : "kiran", 
+    'key3' : [10, 20, 30, 40, 50]
+}
+
+print(dict_val['key3'])
+print(dict_val.keys())
+print(dict_val.values())
+
+list_keys = ['apple', 'ball', 'cat']
+list_values = ['red color fruit', 'something that is used to play', 'type of pet']
+
+dict1 = dict(zip(list_keys, list_values))
+print(dict1)

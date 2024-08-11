@@ -122,11 +122,20 @@ Conditional Statement
 # multiple_of_ten(69)
 # multiple_of_ten(40)
 
-def even_odd_checker(x):
-    if(x%2 == 0):
-        return ("Even Number.", x)
-    else:
-        return ("Odd Number.", x)
+# def even_odd_checker(x):
+#     if(x%2 == 0):
+#         return ("Even Number.", x)
+#     else:
+#         return ("Odd Number.", x)
 
-output = even_odd_checker(9)
-print(output)
+# output = even_odd_checker(9)
+# print(output)
+
+def fact(n):
+    if n==0 or n==1:
+        return 1
+    else :
+        return (n*fact(n-1))
+
+print("The factorial of 5 is ", fact(5))
+

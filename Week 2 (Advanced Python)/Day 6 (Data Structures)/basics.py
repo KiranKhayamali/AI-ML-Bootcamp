@@ -94,18 +94,28 @@
 # dict1 = dict(zip(list_keys, list_values))
 # print(dict1)
 
-#Task 12
-list_ques = []
-list_ans = []
-while True:
-    user_ques = input("Enter question :")
-    user_ans = input("Enter answer of the question :")
-    user_input = input("DO you to continue?    :")
-    list_ques.append(user_ques)
-    list_ans.append(user_ans)
-    if user_input == "N":
-        break
+# #Task 12
+# list_ques = []
+# list_ans = []
+# while True:
+#     user_ques = input("Enter question :")
+#     user_ans = input("Enter answer of the question :")
+#     user_input = input("DO you to continue?    :")
+#     list_ques.append(user_ques)
+#     list_ans.append(user_ans)
+#     if user_input == "N":
+#         break
 
-question = dict(zip(list_ques, list_ans))
+# question = dict(zip(list_ques, list_ans))
 
-print(question)
+# print(question)
+
+#
+dict_var = {
+    'key1' : 10,
+    'key2' : 20
+}
+print(f"Before update: {dict_var}")
+dict_var.update({'key3' : 30})
+dict_var.update( {'key4' : 40})
+print(f"After update :{dict_var}")

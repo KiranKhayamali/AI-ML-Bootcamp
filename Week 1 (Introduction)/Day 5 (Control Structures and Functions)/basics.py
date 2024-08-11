@@ -155,5 +155,6 @@ def reverse(s):
         return s
     else :
         return reverse(s[1:]) +s[0] 
+print("The reverse of hello", reverse("hello"))
 
 print("The reverse of kiran is ", reverse(input_string))

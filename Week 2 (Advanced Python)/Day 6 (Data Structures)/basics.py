@@ -65,3 +65,13 @@ print(f"poping 3rd element from list : {list_var.pop(2)}")
 print(f"poping 6th element : {list_var.pop(4)}")
 print(f"poping 6th element : {list_var.pop(6)}")
 
+#task 11 : create a list of number 1-100 , then remove the odd number
+even_list = []
+for i in range(1, 101):
+    even_list.append(i)
+
+for index, num in enumerate(even_list):
+    if num %2 != 0:
+        even_list.pop(index)
+
+print(even_list)

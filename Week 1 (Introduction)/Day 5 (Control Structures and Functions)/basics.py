@@ -147,3 +147,13 @@ def sum (n):
         return (n + sum(n-1))
 
 print("The sum of 100 number is ", sum(100))
+
+#Task 8
+input_string = "kiran"
+def reverse(s):
+    if s == "":
+        return s
+    else :
+        return reverse(s[1:]) +s[0] 
+
+print("The reverse of kiran is ", reverse(input_string))

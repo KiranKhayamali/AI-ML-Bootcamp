@@ -52,7 +52,16 @@
 
 # print(even_list)
 
-#slicing the list
+# #slicing the list
+# list_var = [1,2,3,4,5,6,7,8,9]
+# print(list_var[1:]) #slices list from the 2nd element
+# print(list_var[1:4]) #slices list from 2nd element to 5th element
+
+#removing element from list
 list_var = [1,2,3,4,5,6,7,8,9]
-print(list_var[1:]) #slices list from the 2nd element
-print(list_var[1:4]) #slices list from 2nd element to 5th element
+print(f"Original list: {list_var}")
+
+print(f"poping 3rd element from list : {list_var.pop(2)}")
+print(f"poping 6th element : {list_var.pop(4)}")
+print(f"poping 6th element : {list_var.pop(6)}")
+

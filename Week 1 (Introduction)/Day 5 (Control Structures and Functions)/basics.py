@@ -139,3 +139,11 @@ def fact(n):
 
 print("The factorial of 5 is ", fact(5))
 
+#Task 7
+def sum (n):
+    if n == 0 or n==1:
+        return 1
+    else:
+        return (n + sum(n-1))
+
+print("The sum of 100 number is ", sum(100))

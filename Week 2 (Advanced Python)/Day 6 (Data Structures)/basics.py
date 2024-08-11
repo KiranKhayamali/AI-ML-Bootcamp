@@ -44,3 +44,10 @@ print(new_list , len(new_list))
 
 print("**" *30)
 
+#Task 10
+even_list = []
+for num in range(1, 101):
+    if num%2 == 0 :
+        even_list.append(num)
+
+print(even_list)

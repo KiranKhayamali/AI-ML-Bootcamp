@@ -158,3 +158,12 @@ def reverse(s):
 print("The reverse of hello", reverse("hello"))
 
 print("The reverse of kiran is ", reverse(input_string))
+
+#Global variable and Local variable 
+
+global_var = 9
+
+def function():
+    print(f"Global variable : {global_var}")
+
+function()

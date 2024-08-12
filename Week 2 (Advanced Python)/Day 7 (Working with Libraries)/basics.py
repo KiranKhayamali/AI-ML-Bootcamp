@@ -14,4 +14,16 @@ dict_var = {
 
 #pandas operations:
 data_frame_var = pd.DataFrame(dict_var) #higher level of data abstraction convert dictionary into dataframe(table)
+print("Before adding new column :")
 print(data_frame_var)
+
+#Adding new column
+data_frame_var['social skils'] = [90, 80, 85, 95]
+print("After adding new column :")
+print(data_frame_var)
+
+#Removing column
+print("After removing a column :")
+data_frame_var = data_frame_var.drop(columns= ['marks'])
+print(data_frame_var)
+

@@ -7,25 +7,33 @@ Pandas library:
     - 
 '''
 
-dict_var = {
-    'student' : ['aadim', 'aashish', 'anish', 'nimesh'],
-    'marks' : [29, 32, 25, 27]
-}
+# dict_var = {
+#     'student' : ['aadim', 'aashish', 'anish', 'nimesh'],
+#     'marks' : [29, 32, 25, 27]
+# }
 
-#pandas operations:
-data_frame_var = pd.DataFrame(dict_var) #higher level of data abstraction convert dictionary into dataframe(table)
-print("Before adding new column :")
-print(data_frame_var)
+# #pandas operations:
+# data_frame_var = pd.DataFrame(dict_var) #higher level of data abstraction convert dictionary into dataframe(table)
+# print("Before adding new column :")
+# print(data_frame_var)
 
-#Adding new column
-data_frame_var['social skils'] = [90, 80, 85, 95]
-print("After adding new column :")
-print(data_frame_var)
+# #Adding new column
+# data_frame_var['social skils'] = [90, 80, 85, 95]
+# print("After adding new column :")
+# print(data_frame_var)
 
-#Removing column
-print("After removing a column :")
-data_frame_var = data_frame_var.drop(columns= ['marks'])
-print(data_frame_var)
+# # #Removing column
+# # print("After removing a column :")
+# # data_frame_var = data_frame_var.drop(columns= ['marks'])
+# # print(data_frame_var)
+
+# #Looking for certain column
+# failed_student = data_frame_var.loc[data_frame_var['marks'] < 32]
+# print("Failed Students :")
+# print(failed_student)
+
+
+
 
 #Task 1
 list_ques = []
@@ -46,3 +54,8 @@ question_data_frame = pd.DataFrame({
 })
 
 print(question_data_frame)
+
+#Task 2 for getting a row using condition
+print("**" * 30)
+print(question_data_frame.loc[(question_data_frame['Question'] == "what is the captial of nepal") & (question_data_frame['Answer'] == "ktm") ])
+

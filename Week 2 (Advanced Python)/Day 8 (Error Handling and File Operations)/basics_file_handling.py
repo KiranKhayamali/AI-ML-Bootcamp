@@ -74,31 +74,65 @@ terminate the program saying incorrect credentials
 
 Do it using json files, save everything to json and load from json 
 '''
+# #Using Text file as data storage
+# def register(flag):
+#     if flag ==1:
+#         username = input("Enter username :")
+#         password = input("Enter password :")
+#         mobile_number = int(input("Enter Mobile number :"))
+#         with open('account.txt', 'a') as f:
+#             f.write(username +" : " + password + " : " + str(mobile_number) +"\n")
+
+#     elif flag == 2:
+#         user_username = input("Enter your username : ")
+#         user_password = input("Enter your password : ")
+#         credentials_found = False
+#         with open('account.txt', 'r') as f: 
+#             file_acc = f.readlines()
+#             for i in range(len(file_acc)):
+#                 file_acc_new = file_acc[i].split(' : ')
+#                 if (user_username == file_acc_new[0]) and (user_password == file_acc_new[1]):
+#                     print(f"Welcome to the device! The mobile number of user {user_username} is {file_acc_new[2]}")
+#                     credentials_found = True
+#                     break
+#             if not credentials_found:
+#                 print("Wrong username and/or password!!")
+
+# user_input = int(input("Enter 1 to sign up and 2 to sign in :"))
+# register(user_input)
+
+#Using JSON as data storage
+import json
 def register(flag):
     if flag ==1:
         username = input("Enter username :")
         password = input("Enter password :")
         mobile_number = int(input("Enter Mobile number :"))
-        with open('account.txt', 'a') as f:
-            f.write(username +" : " + password + " : " + str(mobile_number) +"\n")
+        user_details={
+            "Username" : username,
+            "Password" : password,
+            "Mobile Number" : mobile_number
+        }
+        with open('account.json', 'a') as f:
+            json.dump(user_details, f)
 
     elif flag == 2:
         user_username = input("Enter your username : ")
         user_password = input("Enter your password : ")
         credentials_found = False
-        with open('account.txt', 'r') as f: 
-            file_acc = f.readlines()
-            for i in range(len(file_acc)):
-                file_acc_new = file_acc[i].split(' : ')
-                if (user_username == file_acc_new[0]) and (user_password == file_acc_new[1]):
-                    print(f"Welcome to the device! The mobile number of user {user_username} is {file_acc_new[2]}")
-                    credentials_found = True
-                    break
+        with open('account.json', 'r') as f:
+            users = json.load(f)
+            print(users)
+            if (user_username == users["Username"]) and (user_password == users["Password"]):
+                print(f"Welcome to the device! The mobile number of user {user_username} is {users["Mobile Number"]}")
+                credentials_found = True
+                
             if not credentials_found:
                 print("Wrong username and/or password!!")
 
 user_input = int(input("Enter 1 to sign up and 2 to sign in :"))
 register(user_input)
+
 
 # #JSON
 # import json 

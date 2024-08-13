@@ -52,18 +52,65 @@ To avoid deletion or to use these variable on long term we need to save these va
 
 # user_input = int(input("Enter 1 to write the note and 2 to read the note :"))
 # read_write_note(user_input)
+  
+#Task 3
+'''Task 3: WAP that first gives 2 options: 
+1. Sign up 
+2. Sign in 
 
-#JSON
-import json 
-to_save_dict = {
-    'Student' : ['Aadim', 'Aashish', 'Anish', 'Nimesh'],
-    'Marks' : [10 , 20, 30, 40]
-}
+when 1 is pressed user needs to provide following information 
+1. Username, 2. Password, 3. Mobile number 
+All this information is saved in a file everytime a new user signs up the same file is updated 
+(hint Append over the same file)
 
-with open('database_json.json', 'w') as f:
-    json.dump(to_save_dict, f)
+when 2 is pressed 
+User needs to provide username and password 
+this username and password is checked with username and password in the database
+if matched: 
+welcome to the device and show their phone number 
+else: 
+terminate the program saying incorrect credentials 
 
-with open('database_json.json', 'r') as f:
-    loaded_data = json.load(f)
 
-print(loaded_data)
+Do it using json files, save everything to json and load from json 
+'''
+def register(flag):
+    if flag ==1:
+        username = input("Enter username :")
+        password = input("Enter password :")
+        mobile_number = int(input("Enter Mobile number :"))
+        with open('account.txt', 'a') as f:
+            f.write(username +" : " + password + " : " + str(mobile_number) +"\n")
+
+    elif flag == 2:
+        user_username = input("Enter your username : ")
+        user_password = input("Enter your password : ")
+        credentials_found = False
+        with open('account.txt', 'r') as f: 
+            file_acc = f.readlines()
+            for i in range(len(file_acc)):
+                file_acc_new = file_acc[i].split(' : ')
+                if (user_username == file_acc_new[0]) and (user_password == file_acc_new[1]):
+                    print(f"Welcome to the device! The mobile number of user {user_username} is {file_acc_new[2]}")
+                    credentials_found = True
+                    break
+            if not credentials_found:
+                print("Wrong username and/or password!!")
+
+user_input = int(input("Enter 1 to sign up and 2 to sign in :"))
+register(user_input)
+
+# #JSON
+# import json 
+# to_save_dict = {
+#     'Student' : ['Aadim', 'Aashish', 'Anish', 'Nimesh'],
+#     'Marks' : [10 , 20, 30, 40]
+# }
+
+# with open('database_json.json', 'w') as f:
+#     json.dump(to_save_dict, f)
+
+# with open('database_json.json', 'r') as f:
+#     loaded_data = json.load(f)
+
+# print(loaded_data)

@@ -31,16 +31,18 @@ Exception handling:
 #standard pratice 2
 # Use try excpet on each function
 
-import random
+# import random
 
-crashes =0
-while True:
-    numerator = random.randint(0,100)
-    denomerator = random.randint(0,100)
-    try:
-        output = numerator / denomerator
-    except Exception as e:
-        crashes +=1
-        print("crashes :", crashes)
-        if crashes >= 100:
-            break
+# crashes =0
+# while True:
+#     numerator = random.randint(0,100)
+#     denomerator = random.randint(0,100)
+#     try:
+#         output = numerator / denomerator
+#     except Exception as e:
+#         crashes +=1
+#         print("crashes :", crashes)
+#         if crashes >= 100:
+#             break
+
+#try yourself or explore yourself

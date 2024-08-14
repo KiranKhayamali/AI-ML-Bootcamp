@@ -50,6 +50,19 @@
 
 # print(next(x))
 
-sq_generator = (i**2 for i in range(1,10)) # Create a generator not a tuple
-print(sq_generator)
-print(list(sq_generator))
+# sq_generator = (i**2 for i in range(1,10)) # Create a generator not a tuple
+# print(sq_generator)
+# print(list(sq_generator))
+
+#task 3
+even_generator = (num for num in range(1, 11) if num%2 ==0)
+while True:
+    try:
+        user_input = input("Do you want to continue, type next to print next generator value :")
+        if user_input == 'next':
+            print(next(even_generator))
+        else :
+            print(even_generator)
+    except Exception as e:
+        print(f"The generator is completely executed {e}")
+        break

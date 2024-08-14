@@ -140,14 +140,17 @@ def register(flag):
         user_password = input("Enter your password : ")
         credentials_found = False
         with open('account.json', 'r') as f:
-            users = json.load(f)
-            for user in users:
-                if (user_username == user["Username"]) and (user_password ==user["Password"]):
-                    print(f"Welcome to the device! The mobile number of user {user_username} is {user["Mobile Number"]}")
-                    credentials_found = True
-                    break
-            if not credentials_found:
-                print("Wrong username and/or password!!")
+            try:
+                users = json.load(f)
+                for user in users:
+                    if (user_username == user["Username"]) and (user_password ==user["Password"]):
+                        print(f"Welcome to the device! The mobile number of user {user_username} is {user["Mobile Number"]}")
+                        credentials_found = True
+                        break
+                if not credentials_found:
+                    print("Wrong username and/or password!!")
+            except json.JSONDecodeError:
+                users = [] # Handle case where the file is empty or invalid
 
 user_input = int(input("Enter 1 to sign up and 2 to sign in :"))
 register(user_input)

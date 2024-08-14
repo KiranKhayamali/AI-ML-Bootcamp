@@ -153,8 +153,10 @@ def register(flag):
                 users = [] # Handle case where the file is empty or invalid
 
 user_input = int(input("Enter 1 to sign up and 2 to sign in :"))
-register(user_input)
-
+try:
+    register(user_input)
+except Exception as e:
+    print(e)
 
 # #JSON
 # import json 

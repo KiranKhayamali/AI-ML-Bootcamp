@@ -82,8 +82,31 @@
 # sum_of_two_num = lambda parameter1, parameter2 : parameter1 + parameter2
 # print(sum_of_two_num(5, 23))
 
-#task 4
-list1 = [num for num in range(1, 11)]
-half = lambda parameter : parameter/2
-list2 = [half(num) for num in list1]
-print(list2)
+# #task 4
+# list1 = [num for num in range(1, 11)]
+# half = lambda parameter : parameter/2
+# list2 = [half(num) for num in list1]
+# print(list2)
+
+# #Using if else inside lambda function
+# greater_element = lambda x, y: x if x>y else y
+# print(greater_element(9, 3))
+
+'''
+Task 5: 
+'''
+import pandas as pd
+user_input_element = int(input("Enter number of elements :"))
+list_variable = [int(input("Enter number :")) for num in range (user_input_element)]
+# for num in range (0, user_input_element):
+#     user_input_number = int(input("Enter number :"))
+#     list_variable.append(user_input_number)
+
+even_odd = lambda parameter : "even" if parameter%2 == 0 else "odd"
+even_odd_list = [even_odd(num) for num in list_variable]
+even_odd_dict = {
+    "number" : list_variable,
+    "type" : even_odd_list
+}
+even_odd_dataframe = pd.DataFrame(even_odd_dict)
+print(even_odd_dataframe)

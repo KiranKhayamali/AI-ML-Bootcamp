@@ -54,15 +54,36 @@
 # print(sq_generator)
 # print(list(sq_generator))
 
-#task 3
-even_generator = (num for num in range(1, 11) if num%2 ==0)
-while True:
-    try:
-        user_input = input("Do you want to continue, type next to print next generator value :")
-        if user_input == 'next':
-            print(next(even_generator))
-        else :
-            print(even_generator)
-    except Exception as e:
-        print(f"The generator is completely executed {e}")
-        break
+# #task 3
+# even_generator = (num for num in range(1, 11) if num%2 ==0)
+# while True:
+#     try:
+#         user_input = input("Do you want to continue, type next to print next generator value :")
+#         if user_input.lower() == 'next':
+#             print(next(even_generator))
+#         elif user_input.lower() == 'n':
+#             break
+#         else :
+#             print("Type next to continue or n to exit")
+#     except Exception as e:
+#         print(f"The generator is completely executed {e}")
+#         break
+
+#Lamdba function 
+'''
+    - lambda are often refered as anynomous functions
+    - for very short operations
+    - These function are used in conjuction with higher level function like map, filter etc
+'''
+
+# x = lambda parameter :parameter **2
+# print(x(9))
+
+# sum_of_two_num = lambda parameter1, parameter2 : parameter1 + parameter2
+# print(sum_of_two_num(5, 23))
+
+#task 4
+list1 = [num for num in range(1, 11)]
+half = lambda parameter : parameter/2
+list2 = [half(num) for num in list1]
+print(list2)

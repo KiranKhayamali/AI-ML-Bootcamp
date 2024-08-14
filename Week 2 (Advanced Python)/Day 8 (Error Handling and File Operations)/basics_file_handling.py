@@ -103,7 +103,13 @@ Do it using json files, save everything to json and load from json
 
 #Using JSON as data storage
 import json
+import os
 def register(flag):
+    # Ensure the file exists before trying to read it
+    if not os.path.exists('account.json'):
+        with open('account.json', 'w') as f:
+            json.dump([], f)  # Initialize with an empty list
+    
     if flag ==1:
         username = input("Enter username :")
         password = input("Enter password :")
@@ -113,8 +119,21 @@ def register(flag):
             "Password" : password,
             "Mobile Number" : mobile_number
         }
-        with open('account.json', 'a') as f:
-            json.dump(user_details, f)
+
+        # Load existing users, if any
+        with open('account.json', 'r') as f:
+            try:
+                users = json.load(f)
+            except json.JSONDecodeError:
+                users = []  # Handle case where the file is empty or invalid
+        
+        # Append the new user details to the list of users
+        users.append(user_details)
+        
+        # Write the updated list back to the file
+        with open('account.json', 'w') as f:
+            json.dump(users, f, indent=4)
+        print("User registered successfully!")
 
     elif flag == 2:
         user_username = input("Enter your username : ")
@@ -122,11 +141,11 @@ def register(flag):
         credentials_found = False
         with open('account.json', 'r') as f:
             users = json.load(f)
-            print(users)
-            if (user_username == users["Username"]) and (user_password == users["Password"]):
-                print(f"Welcome to the device! The mobile number of user {user_username} is {users["Mobile Number"]}")
-                credentials_found = True
-                
+            for user in users:
+                if (user_username == user["Username"]) and (user_password ==user["Password"]):
+                    print(f"Welcome to the device! The mobile number of user {user_username} is {user["Mobile Number"]}")
+                    credentials_found = True
+                    break
             if not credentials_found:
                 print("Wrong username and/or password!!")
 

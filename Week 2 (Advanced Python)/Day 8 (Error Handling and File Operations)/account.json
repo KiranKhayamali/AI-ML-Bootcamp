@@ -1,1 +1,12 @@
-{"Username": "test", "Password": "test", "Mobile Number": 123}{"Username": "kiran", "Password": "pass", "Mobile Number": 9845748352}
+[
+    {
+        "Username": "test",
+        "Password": "test",
+        "Mobile Number": 124
+    },
+    {
+        "Username": "kiran",
+        "Password": "pass",
+        "Mobile Number": 9845748352
+    }
+]

@@ -76,18 +76,46 @@ from functools import reduce
     - decorators are special function that take in other function as parameter
     - decorators are understood by by the code editors with @
 '''
-def smart_conversion(func):
-    def converter(x, y):
-        return func(int(x), int(y))
-    return converter
+# def smart_conversion(func):
+#     def converter(x, y):
+#         return func(int(x), int(y))
+#     return converter
     
-@smart_conversion
+# @smart_conversion
+# def division(x,y):
+#     return x/y
+
+# @smart_conversion
+# def addition(x,y):
+#     return x + y
+
+# print(addition('8', '5'))
+# print(division('9', '3'))
+
+#task 4
+def identify(func):
+    def wrapper(x,y):
+        print(f"The function {func.__name__} is running with parameter {x} and {y}.")
+        return func(x,y)
+    return wrapper
+
+@identify
+def addition(x,y):
+    return x +y
+
+@identify
+def subtraction(x, y):
+    return x -y
+
+@identify
 def division(x,y):
     return x/y
 
-@smart_conversion
-def addition(x,y):
-    return x + y
+@identify
+def multiplication(x,y):
+    return x*y
 
-print(addition('8', '5'))
-print(division('9', '3'))
+addition(10, 42)
+subtraction(48, 24)
+division(9, 3)
+multiplication(9, 23)

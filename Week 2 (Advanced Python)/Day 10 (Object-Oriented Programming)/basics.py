@@ -32,12 +32,40 @@
 # output = list(map(is_10 , list1, list2))
 # print(output)
 
-#filter 
-num = [i for i in range(0, 10)]
-evens = list(filter(lambda x : x%2 ==0 , num))
-print(evens)
+# #filter function
+# num = [i for i in range(0, 10)]
+# evens = list(filter(lambda x : x%2 ==0 , num))
+# print(evens)
 
-#task 2
-alist = ['apple', 'ball', 'cat', 'dog', 'elephent']
-output_list = list(filter(lambda x : len(x) >=1, alist))
-print(output_list)
+# #task 2
+# alist = ['apple', 'ball', 'cat', 'dog', 'elephent']
+# output_list = list(filter(lambda x : len(x) >=1, alist))
+# print(output_list)
+
+#reduce function
+'''
+    -it runs in culmulative ways
+    - reduce from left to right 
+    -eg :[1,2,3,4] mult->
+        [mult(1,2) , 3, 4]
+        [mult(2,3), 4]
+        [mult(6,4)]
+        24
+
+'''
+from functools import reduce
+
+# num = [i for i in range(1, 6)]
+# output = reduce (lambda x, y: x*y , num)
+# print(output)
+
+#Task 3
+user_input = int(input("Enter the number of numbers:"))
+user_list = [int(input(f"Enter a list of number {1+num} :") ) for num in range(user_input) ]
+
+square_and_add_4 = list(map(lambda x: x**2+4 , user_list))
+print(f"The list after squaring and adding by 4 is {square_and_add_4}")
+transition_list = list(filter(lambda y : y%5==0 , square_and_add_4))
+print(f"The list after filtering the list that is divisible by 5 is {transition_list}")
+total_sum = reduce(lambda x , y: x +y , transition_list)
+print(total_sum)

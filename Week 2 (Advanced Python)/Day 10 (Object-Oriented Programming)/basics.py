@@ -59,13 +59,35 @@ from functools import reduce
 # output = reduce (lambda x, y: x*y , num)
 # print(output)
 
-#Task 3
-user_input = int(input("Enter the number of numbers:"))
-user_list = [int(input(f"Enter a list of number {1+num} :") ) for num in range(user_input) ]
+# #Task 3
+# user_input = int(input("Enter the number of numbers:"))
+# user_list = [int(input(f"Enter a list of number {1+num} :") ) for num in range(user_input) ]
 
-square_and_add_4 = list(map(lambda x: x**2+4 , user_list))
-print(f"The list after squaring and adding by 4 is {square_and_add_4}")
-transition_list = list(filter(lambda y : y%5==0 , square_and_add_4))
-print(f"The list after filtering the list that is divisible by 5 is {transition_list}")
-total_sum = reduce(lambda x , y: x +y , transition_list)
-print(total_sum)
+# square_and_add_4 = list(map(lambda x: x**2+4 , user_list))
+# print(f"The list after squaring and adding by 4 is {square_and_add_4}")
+# transition_list = list(filter(lambda y : y%5==0 , square_and_add_4))
+# print(f"The list after filtering the list that is divisible by 5 is {transition_list}")
+# total_sum = reduce(lambda x , y: x +y , transition_list)
+# print(total_sum)
+
+
+#Decorators
+'''
+    - decorators are special function that take in other function as parameter
+    - decorators are understood by by the code editors with @
+'''
+def smart_conversion(func):
+    def converter(x, y):
+        return func(int(x), int(y))
+    return converter
+    
+@smart_conversion
+def division(x,y):
+    return x/y
+
+@smart_conversion
+def addition(x,y):
+    return x + y
+
+print(addition('2', '5'))
+print(division('9', '3'))

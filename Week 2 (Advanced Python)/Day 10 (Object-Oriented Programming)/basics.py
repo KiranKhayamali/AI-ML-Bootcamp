@@ -89,5 +89,5 @@ def division(x,y):
 def addition(x,y):
     return x + y
 
-print(addition('2', '5'))
+print(addition('8', '5'))
 print(division('9', '3'))

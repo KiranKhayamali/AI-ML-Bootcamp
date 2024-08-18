@@ -125,12 +125,23 @@ Task 2:
 
     if 3 is pressed terminate 
 '''
+import json
 class User:
     def __init__(self):
         self.file = 'users.json'
         self.notes = []
-        self.load_user()
+        self.main_menu()
 
+    def load_user(self):
+        try :
+            with open(self.file, 'r') as f:
+                self.users = json.loads(f)
+        except FileExistsError:
+            self.users = {}
+
+    def save_user(self):
+        with open(self.file, 'w') as f:
+            json.dumps(self.users, f, indent=4)
     def welcome_user(self):
         print(f"Hello {self.username} to the program! \n {self.username} has mobile number : {self.number}")
         user_input = input("1. Enter Notes \n2. Display Notes \n3. Exit \n:")
@@ -139,19 +150,27 @@ class User:
         self.username = input("Enter UserName :")
         self.password = input("Register a password :")
         self.number = input(f"Hey {self.username}! What is your mobile number :")
+        self.users = {
+            'username' : self.username,
+            'password' : self.password,
+            'mobile number' : self.number
+        }
+        self.save_user()
 
     def authenticate(self):
         username = input("Enter your username :")
         password = input("Enter your password :")
-        if username == self.username and password == self.password:
+        self.load_user()
+        if username == self.users['username'] and password == self.users['password']:
             self.welcome_user()
-
-    user_input = input(f"1. Sign up \n2.Sign up \n3.Exit \n:")
-    if user_input == 1:
-        register_user()
-    elif user_input == 2:
-        authenticate()
-    elif user_input == 3:
-        exit
+    
+    def main_menu(self):
+        self.user_input = input(f"1. Sign up \n2.Sign up \n3.Exit \n:")
+        if self.user_input == 1:
+            self.register_user()
+        elif self.user_input == 2:
+            self.authenticate()
+        else:
+            exit
 
 user1 = User()

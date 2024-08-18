@@ -10,20 +10,44 @@ Object :
     -> Dog has 4 legs(variable) and bark(function)
 '''
 
-class Animal:
-    def what_sound_does_it_make(self, flag):
-        if flag.lower() == 'bark':
-            print(f"Hey Its a dog!!!")
-        elif flag.lower() == 'meow':
-            print("Hey Its a cat!!!")
-        else:
-            print("Its a human")
+# class Animal:
+#     def what_sound_does_it_make(self, flag):
+#         if flag.lower() == 'bark':
+#             print(f"Hey Its a dog!!!")
+#         elif flag.lower() == 'meow':
+#             print("Hey Its a cat!!!")
+#         else:
+#             print("Its a human")
 
-species_animal1 = Animal()
-species_animal1.what_sound_does_it_make('bark')
+# species_animal1 = Animal()
+# species_animal1.what_sound_does_it_make('bark')
 
-species_animal2 = Animal()
-species_animal2.what_sound_does_it_make('meow')
+# species_animal2 = Animal()
+# species_animal2.what_sound_does_it_make('meow')
 
-species_animal3 = Animal()
-species_animal3.what_sound_does_it_make('talks')
+# species_animal3 = Animal()
+# species_animal3.what_sound_does_it_make('talks')
+
+#Task 1
+class Calculator:
+    def add (self, num1, num2):
+        print(num1+ num2)
+    def sub (self, num1, num2):
+        print( num1- num2)
+    def mul(self, num1, num2):
+        print( num1*num2)
+    def div (self, num1, num2):
+        print( num1 / num2)
+    
+calculate_1 = Calculator()
+calculate_1.add(38, 20)
+    
+calculate_2 = Calculator()
+calculate_2.sub(38, 20)
+
+calculate_3 = Calculator()
+calculate_3.mul(39, 25)
+
+    
+calculate_4 = Calculator()
+calculate_4.div(36, 4)

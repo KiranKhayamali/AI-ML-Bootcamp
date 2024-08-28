@@ -2,6 +2,7 @@
 import requests
 
 #urls = http://127.0.0.1:8000/predict for localhost http://192.168.1.124:4444 for mac ID of the computer
+#For Flask
 # url = "http://127.0.0.1:4444/predict"
 
 #For FastAPI

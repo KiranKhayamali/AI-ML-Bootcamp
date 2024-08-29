@@ -1,0 +1,18 @@
+2024-08-14 17:46:49.652 | ERROR    | __main__:nested:34 - What?!
+Traceback (most recent call last):
+
+  File "C:\Users\kiran\OneDrive\Desktop\Free Work\Loguru\try.py", line 36, in <module>
+    nested(0)
+    └ <function nested at 0x000001CE3C3E4EA0>
+
+> File "C:\Users\kiran\OneDrive\Desktop\Free Work\Loguru\try.py", line 32, in nested
+    func(5, c)
+    │       └ 0
+    └ <function func at 0x000001CE3C3E4E00>
+
+  File "C:\Users\kiran\OneDrive\Desktop\Free Work\Loguru\try.py", line 28, in func
+    return a / b
+           │   └ 0
+           └ 5
+
+ZeroDivisionError: division by zero

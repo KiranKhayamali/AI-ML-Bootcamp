@@ -65,6 +65,7 @@ def register(flag):
             except json.JSONDecodeError:
                 users = [] 
 
+
 user_input = int(input("Enter 1 to sign up and 2 to sign in :"))
 try:
     register(user_input)
